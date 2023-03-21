@@ -1,22 +1,3 @@
-terraform {
-  required_providers {
-    newrelic = {
-      source = "newrelic/newrelic"
-      version = "3.17.1"
-    }
-  }
-}
-
-# provider "newrelic" {
-#   # Configuration options
-# }
-provider "newrelic" {
-  api_key = "NRAK###"
-  account_id = "100####"
-}
-
-
-
 resource "newrelic_alert_policy" "foo" {
   name = "foo"
 }
