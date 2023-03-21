@@ -1,25 +1,52 @@
+terraform {
+  required_providers {
+    newrelic = {
+      source = "newrelic/newrelic"
+      version = "3.17.1"
+    }
+  }
+}
+
+# provider "newrelic" {
+#   # Configuration options
+# }
 provider "newrelic" {
-  api_key = "SUA_API_KEY_AQUI"
+  api_key = "NRAK###"
+  account_id = "100####"
 }
 
-resource "newrelic_alert_condition" "cpu_alert" {
-  name = "CPU High"
-  type = "apm_app_metric"
-  policy_id = "${newrelic_alert_policy.default.id}"
-  entities = ["${var.server_id}"]
-  metric = "cpu_percentage"
+
+
+resource "newrelic_alert_policy" "foo" {
+  name = "foo"
+}
+
+resource "newrelic_alert_condition" "foo" {
+  policy_id = newrelic_alert_policy.foo.id
+
+  name        = "foo"
+  type        = "apm_app_metric"
+  entities     = [var.server_id]
+  #entities    = ["${var.server_id}"]
+  metric      = "apdex"
+
   condition_scope = "application"
-  comparison_operator = "above"
-  threshold = 90
-  enabled = true
+
+  term {
+    duration      = 5
+    operator      = "below"
+    priority      = "critical"
+    threshold     = "0.75"
+    time_function = "all"
+  }
 }
 
-resource "newrelic_alert_policy" "default" {
-  name = "Default policy"
-  incident_preference = "PER_CONDITION"
-}
+
+# entities     = ["${var.server_id}"]
 
 variable "server_id" {
+  type    = string
+  default = "3613378"
   description = "The New Relic server ID"
 }
 
