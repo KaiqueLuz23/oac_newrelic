@@ -4,6 +4,10 @@
 
 ## Oque nosso codigo faz ? 
 
+Cria 
+
+## Documentação dos arquivos ".tf"
+
 ### 1 - Config Terraforms em NewRelic:
 main.tf = Usei para setar alguns parametros 
 ### 2 - Criar uma Condições de alerta e notificações via e-mail. 
