@@ -1,5 +1,5 @@
 
-# OaC Observabilidade em Código
+# OaC - Terraform + NewRelic
 
 
 ## Oque nosso codigo faz ? 
@@ -14,6 +14,12 @@ newrelic_notification_channel.tf = Para criar o canal de notificação
 newrelic_notification_destination.tf = Para criar a lista a qual vai receber as notificações 
 ### 3 - Criar um Dashboard. 
 newrelic_dashboard.tf = Criando um dashboard
+
+
+## Referência
+
+ - [Terraform - New Relic Provider](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs)
+ - [Observability as Code - NewRelic](https://docs.newrelic.com/docs/new-relic-solutions/observability-maturity/operational-efficiency/observability-as-code-guide/)
 
 
 ![Logo](./img/%40kaiqueluz23.png)
