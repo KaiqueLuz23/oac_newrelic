@@ -12,10 +12,10 @@ Todas essas etapas são realizadas de forma automatizada pelo Terraform, o que p
 
 
 ## 2 - Documentação dos arquivos ".tf"
-### * Configuração do Terraform para o New Relic:
+###  Configuração do Terraform para o New Relic:
 *main.tf*: Este arquivo é utilizado para configurar os parâmetros iniciais do Terraform para a criação dos recursos no New Relic.
 
-### * Criação de condições de alerta e notificações via e-mail:
+###  Criação de condições de alerta e notificações via e-mail:
 *provider.tf*: Este arquivo é utilizado para configurar a conexão do Terraform com a API do New Relic, através do fornecimento da chave de API e ID da conta.
 
 *main.tf*: Este arquivo é utilizado para definir as condições de alerta e as configurações dos recursos do New Relic.
@@ -26,7 +26,7 @@ Todas essas etapas são realizadas de forma automatizada pelo Terraform, o que p
 
 *newrelic_notification_destination.tf*: Este arquivo é utilizado para criar a lista de destinatários que receberão as notificações.
 
-### * Criação de um dashboard
+###  Criação de um dashboard
 *newrelic_dashboard.tf*: Este arquivo é utilizado para criar um dashboard personalizado no New Relic. O dashboard é usado para visualizar e monitorar os dados e recursos da aplicação em tempo real.
 
 
@@ -37,7 +37,7 @@ Para fazer o deploy desse projeto rode
 Clone o projeto do Terraform no GitHub para a sua máquina local: 
 
 ```bash
-  https://github.com/KaiqueLuz23/oac_newrelic.git
+  git clone https://github.com/KaiqueLuz23/oac_newrelic.git
 ```
 
 Insira suas credenciais do New Relic no arquivo *provider*.tf utilizando as variáveis de ambiente ou diretamente no arquivo. É necessário ter permissões necessárias para criar recursos no New Relic.
