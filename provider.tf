@@ -12,5 +12,5 @@ terraform {
 provider "newrelic" {
   #region = "US"   
   api_key = "NRAK-####"
-  account_id = "100###"
+  account_id = "3#####"
 }
